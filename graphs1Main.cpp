@@ -171,7 +171,7 @@ void graphs1Dialog::OnQuit(wxCommandEvent& event)
 void graphs1Dialog::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
+    wxMessageBox(msg, _("Welcome to graphs"));
 }
 
 void graphs1Dialog::OnTextCtrl2Text(wxCommandEvent& event)
@@ -257,7 +257,6 @@ void graphs1Dialog::Paint()
     int h1=h/2-50;
 
     dc.SetPen(*wxGREEN_PEN);
-//    dc.DrawLine(0,0,w,h);
     if(!LoadedOrNot)
     {
         AM.Clear();
@@ -323,7 +322,6 @@ void graphs1Dialog::OnTextCtrl1Text(wxCommandEvent& event)
 
 void graphs1Dialog::OnButton1Click1(wxCommandEvent& event)
 {
-
         int Selection = Choice1->GetSelection();
         switch(Selection)
         {
@@ -401,8 +399,4 @@ void graphs1Dialog::OnButton1Click1(wxCommandEvent& event)
                     }
                 }
             }
-
-
-
-
 }
