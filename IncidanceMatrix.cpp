@@ -10,14 +10,10 @@ int IncidanceMatrix::getEdgeCount(){
 }
 
 vector<vector<int> >& IncidanceMatrix::getMatrix(){
-
 	return m_Matrix;
-
-};
-IncidanceMatrix::~IncidanceMatrix()
-{
-	//m_Matrix.~vector();
 }
+
+IncidanceMatrix::~IncidanceMatrix(){}
 
 int IncidanceMatrix::getPeakCount(){
 	return m_PeakCount;
@@ -38,16 +34,16 @@ IncidanceMatrix::IncidanceMatrix(std::ifstream &Imatrix){
 			m_EdgeCount=0;
 		}
 
-	//Zliczanie liczby wêz³ow
+	//Zliczanie liczby wÃªzÂ³ow
 	m_EdgeCount=CheckPeaks.length()/2+1;
-	if(m_EdgeCount==0){std::perror("Graf bezkrawêdziowy.");}
+	if(m_EdgeCount==0){std::perror("Graf bezkrawÃªdziowy.");}
 
 
 //////////////SCIAGANIE////MACIERZY/////////////////////////////////////////////////////////
-	//Ustawienie fstream na pocz¹tek pliku
+	//Ustawienie fstream na poczÂ¹tek pliku
 	Imatrix.seekg(0);
-	//Zwiêkszenie liczby wierszy
-	//Wczytanie  i zwiêszkenie liczby kolumn
+	//ZwiÃªkszenie liczby wierszy
+	//Wczytanie  i zwiÃªszkenie liczby kolumn
 
 
 	while(!Imatrix.eof()){
@@ -61,7 +57,7 @@ IncidanceMatrix::IncidanceMatrix(std::ifstream &Imatrix){
 
 }
 
-//Konstruktor konwertuj¹cy macierz s¹siedztwa na macierz incydencji
+//Konstruktor konwertujÂ¹cy macierz sÂ¹siedztwa na macierz incydencji
 
 IncidanceMatrix::IncidanceMatrix(AdjacencyMatrix & AMatrix){
 	m_PeakCount=AMatrix.getPeakCount();
